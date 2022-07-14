@@ -1,0 +1,37 @@
+
+<mvc:View controllerName="com.galemdar.aktiviteproje.controller.MainView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:semantic="sap.m.semantic"
+    xmlns:l="sap.ui.layout">
+    
+
+    <semantic:FullscreenPage
+        id="page"
+        title="{i18n>title}">
+        <semantic:content>
+
+            <List 
+                mode="Delete"
+		        delete="onPressDeleteUser"
+                items="{mainModel>/KullanıcıListesi}" 
+                headerText="Kullanıcı Listesi">
+                    <StandardListItem 
+                    title="{mainModel>Kullaniciadi}" 
+                    type="Navigation"
+                    press="onPressItem"
+                    description="Kullanıcı No : {mainModel>Kullaniciid}" />
+            </List>
+
+    </semantic:content>
+
+    <semantic:positiveAction>
+        <semantic:PositiveAction text="Kullanıcı Ekle" press="onUserFragmentOpen"/>
+    </semantic:positiveAction>
+
+
+    </semantic:FullscreenPage>
+
+    
+
+</mvc:View>

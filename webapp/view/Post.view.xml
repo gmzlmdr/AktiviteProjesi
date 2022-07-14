@@ -1,0 +1,77 @@
+<mvc:View
+    controllerName="com.galemdar.aktiviteproje.controller.Post"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:semantic="sap.m.semantic"
+    xmlns:l="sap.ui.layout">
+    <semantic:FullscreenPage
+    id="page"
+    title="{i18n>PostViewTitle}">
+		<semantic:content>
+			<Table
+            id="table"
+            width="auto"
+            class="sapUiResponsiveMargin"
+            mode="Delete"
+		    delete="onPressDeleteAktivite"
+            growing="true"
+            items="{aktiviteModel>/AktiviteListesi}">
+            <headerToolbar>
+                <Toolbar>
+                    <Label id="tableHeader" />
+                    <ToolbarSpacer />
+                    <SearchField id="searchField" width="auto" search=".onFilterPosts" />
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column width="20%"  vAlign="Middle">
+                    <Text text="{i18n>AktiviteAdiColumnTitle}"/>
+                </Column>
+                <Column width="20%"  vAlign="Middle">
+                    <Text text="{i18n>AktiviteAciklamaColumnTitle}" />
+                </Column>
+                <Column width="20%"  vAlign="Middle">
+                    <Text text="{i18n>AktiviteSaatColumnTitle}" />
+                </Column>
+                <Column width="20%"  vAlign="Middle">
+                    <Text text="{i18n>AktiviteTarihColumnTitle}" />
+                </Column>
+                <Column width="10%"  vAlign="Middle">
+                    
+                </Column>
+            </columns>
+            <items>
+
+                <ColumnListItem
+                    vAlign="Middle"
+                    type="Navigation">
+                    <cells>
+                        <ObjectIdentifier title="{aktiviteModel>Aktiviteadi}" />
+                        <Text text="{aktiviteModel>Aciklama}" />
+                        <Label text="{aktiviteModel>Saat}"></Label>
+                        <Label text="{aktiviteModel>Tarih}"></Label>
+
+                    </cells>
+                    
+                    <l:VerticalLayout
+		                class="sapUiContentPadding"
+		                width="100%">
+		                <Button
+		                	text="Edit"
+                            icon="sap-icon://edit"
+		                	press="onAktiviteUpdatefragmantOpen" />
+	                </l:VerticalLayout>
+                    
+                </ColumnListItem> 
+            </items>
+            </Table>
+		</semantic:content>
+
+        <semantic:positiveAction>
+            <semantic:PositiveAction text="Aktivite Ekle" press=".onAktiviteFragmentOpen"/>
+        </semantic:positiveAction>
+        
+	</semantic:FullscreenPage>
+
+</mvc:View>

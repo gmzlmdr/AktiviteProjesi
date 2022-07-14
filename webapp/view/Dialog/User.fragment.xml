@@ -1,0 +1,24 @@
+<core:FragmentDefinition 
+xmlns="sap.m" 
+xmlns:l="sap.ui.layout" 
+xmlns:form="sap.ui.layout.form"
+xmlns:core="sap.ui.core">
+    <Dialog id="UserFragment" title="Kullanıcı Ekle" >
+        
+        <content >
+            <Label text="Kullanıcı id" design="Standard" width="20%"  textAlign="Begin" class="sapUiLargeMarginBegin"></Label>
+            <Input value ="{CreateUser>/Kullaniciid}" width="50%" textAlign="End"></Input>
+            <Label text="Kullanıcı adı" design="Standard" width="20%"  textAlign="Begin" class="sapUiLargeMarginBegin"></Label>
+            <Input value ="{CreateUser>/Kullaniciadi}" width="50%" textAlign="End"></Input>
+        </content>
+        
+        <beginButton>
+            <Button text="Kaydet" press="onUserFragmentSave" />
+        </beginButton>
+
+         <endButton>
+            <Button text="Close" press="onUserFragmentClose" />
+        </endButton>
+        
+    </Dialog>
+</core:FragmentDefinition>

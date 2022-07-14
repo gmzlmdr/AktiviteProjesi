@@ -1,0 +1,36 @@
+<core:FragmentDefinition 
+xmlns="sap.m" 
+xmlns:l="sap.ui.layout" 
+xmlns:form="sap.ui.layout.form"
+xmlns:core="sap.ui.core">
+    <Dialog id="AktiviteFragment" title="Aktivite Ekle" >
+        <content>
+            <Label text="Aktivite id" design="Standard" width="35%"   class="sapUiLargeMarginBegin "></Label>
+            <Input value ="{CreateAktivite>/Aktiviteid}" width="35%" ></Input>
+
+            <Label text="Aktivite adı" design="Standard" width="35%"   class="sapUiLargeMarginBegin"></Label>
+            <Input value ="{CreateAktivite>/Aktiviteadi}" width="35%" ></Input>
+
+            <Label text="Saat" design="Standard" width="35%"   class="sapUiLargeMarginBegin"></Label>
+            <Input value ="{CreateAktivite>/Saat}" width="35%" ></Input>
+            
+            <Label text="Tarih" design="Standard" width="35%"   class="sapUiLargeMarginBegin "></Label>
+            <Input value ="{CreateAktivite>/Tarih}" width="35%" ></Input>
+
+            <Label text="Açıklama" design="Standard" width="35%"  class="sapUiLargeMarginBegin "></Label>
+            <Input value ="{CreateAktivite>/Aciklama}" width="35%" ></Input>
+
+            <Label text="Kullanıcı id" design="Standard" width="35%"   class="sapUiLargeMarginBegin "></Label>
+            <Input value ="{CreateAktivite>/Kullaniciid}" width="35%" ></Input>
+        </content>
+        
+        <beginButton>
+            <Button text="Kaydet" press="onAktiviteFragmentSave" />
+        </beginButton>
+
+         <endButton>
+            <Button text="Close" press="onAktiviteFragmentClose" />
+        </endButton>
+        
+    </Dialog>
+</core:FragmentDefinition>
