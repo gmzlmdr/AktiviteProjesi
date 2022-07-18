@@ -13,13 +13,11 @@
             id="table"
             width="auto"
             class="sapUiResponsiveMargin"
-            mode="Delete"
-		    delete="onPressDeleteAktivite"
             growing="true"
             items="{aktiviteModel>/AktiviteListesi}">
             <headerToolbar>
                 <Toolbar>
-                    <Label id="tableHeader" />
+                   
                     <ToolbarSpacer />
                     <SearchField id="searchField" width="auto" search=".onFilterPosts" />
                 </Toolbar>
@@ -40,12 +38,14 @@
                 <Column width="10%"  vAlign="Middle">
                     
                 </Column>
+                <Column width="10%"  vAlign="Middle">
+                    
+                </Column>
             </columns>
             <items>
 
                 <ColumnListItem
-                    vAlign="Middle"
-                    type="Navigation">
+                    vAlign="Middle">
                     <cells>
                         <ObjectIdentifier title="{aktiviteModel>Aktiviteadi}" />
                         <Text text="{aktiviteModel>Aciklama}" />
@@ -61,6 +61,14 @@
 		                	text="Edit"
                             icon="sap-icon://edit"
 		                	press="onAktiviteUpdatefragmantOpen" />
+	                </l:VerticalLayout>
+                    <l:VerticalLayout
+		                class="sapUiContentPadding"
+		                width="100%">
+                        <Button
+		                	text="Delete"
+                            icon="sap-icon://delete"
+		                	press="onPressDeleteAktivite" />
 	                </l:VerticalLayout>
                     
                 </ColumnListItem> 

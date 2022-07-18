@@ -13,7 +13,6 @@ sap.ui.define([
            
             onInit: function () {
                 this.getOwnerComponent().getRouter().getRoute("post").attachMatched(this.filter, this);
-               
             },
 
             filter:function(oEvent){
@@ -53,8 +52,7 @@ sap.ui.define([
 
             onPressDeleteAktivite:function(oEvent){
 
-                var contexPath = oEvent.getParameter("listItem").getBindingContextPath();
-                var id = this.getView().getModel("aktiviteModel").getProperty(contexPath).Aktiviteid;
+                var id = oEvent.getSource().getBindingContext('aktiviteModel').getObject("Aktiviteid");
                 var oDataModel = this.getView().getModel();
 
                 oDataModel.remove("/AktiviteSet('" + id + "')", {

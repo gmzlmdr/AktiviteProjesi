@@ -3,7 +3,7 @@ xmlns="sap.m"
 xmlns:l="sap.ui.layout" 
 xmlns:form="sap.ui.layout.form"
 xmlns:core="sap.ui.core">
-    <Dialog id="UserFragment" title="Kullanıcı Ekle" >
+    <Dialog id="UserFragment" title="Kullanıcı Ekle" contentWidth="600px">
         
         <content >
             <Label text="Kullanıcı id" design="Standard" width="20%"  textAlign="Begin" class="sapUiLargeMarginBegin"></Label>
