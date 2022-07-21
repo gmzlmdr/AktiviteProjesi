@@ -49,9 +49,15 @@
                     <cells>
                         <ObjectIdentifier title="{aktiviteModel>Aktiviteadi}" />
                         <Text text="{aktiviteModel>Aciklama}" />
-                        <Label text="{aktiviteModel>Saat}"></Label>
-                        <Label text="{aktiviteModel>Tarih}"></Label>
+                        <Text text="{aktiviteModel>Saat}" />
 
+                        <Label text="{path:'aktiviteModel>Tarih',
+                            type: 'sap.ui.model.type.Date',  
+                            formatOptions: {
+                                pattern: 'dd.MM.yyyy'  
+                            }
+                        }"></Label> 
+                        
                     </cells>
                     
                     <l:VerticalLayout

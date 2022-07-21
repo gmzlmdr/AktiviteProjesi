@@ -59,13 +59,14 @@ sap.ui.define([
                     method: "DELETE",
                     
                     success: function (oData, oResponse) {
-                        MessageBox.success("Silme İşlemi Başarılı");                        
+                        //MessageBox.success("Silme İşlemi Başarılı");  
+                        location.reload();                      
                     },
                     error: function (oError) {
                         MessageBox.error("Silme İşlemi Başarısız");
                     }
                 });
-                location.reload();
+               
             },
 
 
@@ -141,8 +142,6 @@ sap.ui.define([
 
                 var oEntry = {};
 
-                
-
                 var aktiviteModel = this.getView().getModel("CreateAktivite");
 
                 oEntry.Aktiviteid  = aktiviteModel.getData().Aktiviteid;
@@ -162,7 +161,6 @@ sap.ui.define([
                         MessageBox.error("Kayıt İşlemi Başarısız");
                     }
                 });
-                location.reload();
             },
 
             onAktiviteFragmentClose:function(){
@@ -177,7 +175,7 @@ sap.ui.define([
 
             onAktiviteUpdateFragmentSave: function(oEvent) {
 			    var oEntry = {};
-
+                
                 var aktiviteModel = this.getView().getModel("aktiviteModel");
 
                 oEntry.Aktiviteid  = aktiviteModel.getData().Aktiviteid;

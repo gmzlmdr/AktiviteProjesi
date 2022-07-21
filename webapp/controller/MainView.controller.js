@@ -81,12 +81,10 @@ sap.ui.define([
                 });
 
             },
-            onUserFragmentClose : function() {
-                this.byId("UserFragment").close();
-                location.reload();
-            },
+            
 
             onPressDeleteUser:function(oEvent){
+
                 var contexPath = oEvent.getParameter("listItem").getBindingContextPath();
                 var id = this.getView().getModel("mainModel").getProperty(contexPath).Kullaniciid;
                 
@@ -95,12 +93,18 @@ sap.ui.define([
                     method: "DELETE",
                     
                     success: function (oData, oResponse) {
-                        MessageBox.success("Silme İşlemi Başarılı");                        
+                       // MessageBox.success("Silme İşlemi Başarılı");     
+                        location.reload();                   
                     },
                     error: function (oError) {
                         MessageBox.error("Silme İşlemi Başarısız");
                     }
                 });
+                
+            },
+
+            onUserFragmentClose : function() {
+                this.byId("UserFragment").close();
                 location.reload();
             }
         });
