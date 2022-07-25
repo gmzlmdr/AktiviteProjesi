@@ -17,9 +17,8 @@
             items="{aktiviteModel>/AktiviteListesi}">
             <headerToolbar>
                 <Toolbar>
-                   
                     <ToolbarSpacer />
-                    <SearchField id="searchField" width="auto" search=".onFilterPosts" />
+                    <SearchField id="searchField" width="auto" search=".onSearch" />
                 </Toolbar>
             </headerToolbar>
             <columns>
@@ -43,9 +42,7 @@
                 </Column>
             </columns>
             <items>
-
-                <ColumnListItem
-                    vAlign="Middle">
+                <ColumnListItem vAlign="Middle" >
                     <cells>
                         <ObjectIdentifier title="{aktiviteModel>Aktiviteadi}" />
                         <Text text="{aktiviteModel>Aciklama}" />

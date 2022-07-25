@@ -1,12 +1,14 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator",
 	"sap/ui/model/json/JSONModel",
 	"sap/m/MessageBox"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel, MessageBox) {
+    function (Controller, Filter, FilterOperator, JSONModel, MessageBox) {
         "use strict";
 
         return Controller.extend("com.galemdar.aktiviteproje.controller.MainView", {
@@ -196,7 +198,24 @@ sap.ui.define([
                     }
                 });
     
-            }, 
+            },
+            onSearch: function (oEvent) {
+                var oTableSearchState = [],
+                sQuery = oEvent.getParameter("query");
+            if (sQuery && sQuery.length > 0) {
+                // oTableSearchState = [new Filter("Activityname", FilterOperator.Contains, sQuery)]; // tek filter
+
+                oTableSearchState = new Filter({
+                    filters: [
+                        new Filter("Aktiviteadi", FilterOperator.Contains, sQuery),
+                        new Filter("Aktiviteid", FilterOperator.Contains, sQuery)
+                    ],
+                   // and: false
+                });
+            }
+            this.getView().byId("table").getBinding("items").filter(oTableSearchState, "Application");
+                
+            }
 
         });
     });

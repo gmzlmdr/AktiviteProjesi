@@ -3,7 +3,7 @@ xmlns="sap.m"
 xmlns:l="sap.ui.layout" 
 xmlns:form="sap.ui.layout.form"
 xmlns:core="sap.ui.core">
-    <Dialog id="AktiviteFragment" title="Aktivite Ekle" >
+    <Dialog id="AktiviteFragment" title="Aktivite Ekle" contentWidth="600px">
         <content>
             <Label text="Aktivite id" design="Standard" width="35%"   class="sapUiLargeMarginBegin "></Label>
             <Input value ="{CreateAktivite>/Aktiviteid}" width="35%" ></Input>
